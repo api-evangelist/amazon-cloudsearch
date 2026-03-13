@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "cloudsearch": "https://docs.aws.amazon.com/cloudsearch/latest/developerguide/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Domain": {
+      "@id": "cloudsearch:Domain",
+      "@context": {
+        "domainId": "cloudsearch:domainId",
+        "domainName": "schema:name",
+        "arn": "cloudsearch:arn",
+        "created": {
+          "@id": "cloudsearch:created",
+          "@type": "xsd:boolean"
+        },
+        "deleted": {
+          "@id": "cloudsearch:deleted",
+          "@type": "xsd:boolean"
+        },
+        "processing": {
+          "@id": "cloudsearch:processing",
+          "@type": "xsd:boolean"
+        },
+        "searchInstanceCount": {
+          "@id": "cloudsearch:searchInstanceCount",
+          "@type": "xsd:integer"
+        },
+        "searchInstanceType": "cloudsearch:searchInstanceType"
+      }
+    },
+
+    "IndexField": {
+      "@id": "cloudsearch:IndexField",
+      "@context": {
+        "indexFieldName": "schema:name",
+        "indexFieldType": "cloudsearch:indexFieldType"
+      }
+    },
+
+    "SearchResult": {
+      "@id": "cloudsearch:SearchResult",
+      "@context": {
+        "hits": {
+          "@id": "cloudsearch:hits",
+          "@container": "@set"
+        },
+        "found": {
+          "@id": "cloudsearch:found",
+          "@type": "xsd:integer"
+        },
+        "start": {
+          "@id": "cloudsearch:start",
+          "@type": "xsd:integer"
+        }
+      }
+    }
+  }
+}

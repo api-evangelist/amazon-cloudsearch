@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/amazon/cloudsearch/domain.json",
+  "title": "Amazon CloudSearch Domain",
+  "description": "Represents an Amazon CloudSearch domain with its configuration, index fields, and service endpoints.",
+  "type": "object",
+  "required": ["domainName"],
+  "properties": {
+    "domainId": {
+      "type": "string",
+      "description": "An internally generated unique identifier for a domain."
+    },
+    "domainName": {
+      "type": "string",
+      "description": "A string that represents the name of a domain.",
+      "minLength": 3,
+      "maxLength": 28,
+      "pattern": "^[a-z][a-z0-9-]+$"
+    },
+    "arn": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) of the search domain.",
+      "pattern": "^arn:aws:cloudsearch:[a-z0-9-]+:[0-9]{12}:domain/.+$"
+    },
+    "created": {
+      "type": "boolean",
+      "description": "True if the search domain is created."
+    },
+    "deleted": {
+      "type": "boolean",
+      "description": "True if the search domain has been deleted."
+    },
+    "processing": {
+      "type": "boolean",
+      "description": "True if processing is being done to activate the current domain configuration."
+    },
+    "requiresIndexDocuments": {
+      "type": "boolean",
+      "description": "True if IndexDocuments needs to be called to activate the current domain configuration."
+    },
+    "searchInstanceCount": {
+      "type": "integer",
+      "description": "The number of search instances that are available to process search requests."
+    },
+    "searchInstanceType": {
+      "type": "string",
+      "description": "The instance type that is being used to process search requests."
+    },
+    "docService": {
+      "type": "object",
+      "description": "The service endpoint for updating documents in a search domain.",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "description": "The endpoint to which service requests can be submitted."
+        }
+      }
+    },
+    "searchService": {
+      "type": "object",
+      "description": "The service endpoint for requesting search results from a search domain.",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "description": "The endpoint to which service requests can be submitted."
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

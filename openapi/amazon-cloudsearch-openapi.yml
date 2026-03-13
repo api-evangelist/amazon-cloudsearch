@@ -1,0 +1,417 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudSearch API
+  description: >-
+    Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple
+    and cost-effective to set up, manage, and scale a search solution for your
+    website or application. CloudSearch supports full-text search with language-specific
+    text processing, Boolean search, autocomplete suggestions, faceting, highlighting,
+    and geospatial search.
+  version: '2013-01-01'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/contact-us/
+  termsOfService: https://aws.amazon.com/service-terms/
+externalDocs:
+  description: Amazon CloudSearch API Reference
+  url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
+servers:
+  - url: https://cloudsearch.{region}.amazonaws.com
+    description: Amazon CloudSearch Regional Endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS Region
+tags:
+  - name: Domains
+    description: Operations for creating and managing search domains
+  - name: Index Fields
+    description: Operations for defining and managing index fields
+  - name: Scaling
+    description: Operations for configuring scaling options
+paths:
+  /domains:
+    post:
+      operationId: CreateDomain
+      summary: Create a search domain
+      description: >-
+        Creates a new search domain. For more information, see Creating a Search
+        Domain in the Amazon CloudSearch Developer Guide.
+      tags:
+        - Domains
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDomainRequest'
+      responses:
+        '200':
+          description: Domain created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDomainResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '409':
+          description: Resource already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceAlreadyExistsException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+    get:
+      operationId: DescribeDomains
+      summary: Describe search domains
+      description: >-
+        Gets information about the search domains owned by this account.
+        Can be limited to specific domains.
+      tags:
+        - Domains
+      parameters:
+        - name: domainNames
+          in: query
+          description: A list of domain names to describe.
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeDomainsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+
+  /domains/{domainName}:
+    delete:
+      operationId: DeleteDomain
+      summary: Delete a search domain
+      description: >-
+        Permanently deletes a search domain and all of its data. Once a domain
+        has been deleted, it cannot be recovered.
+      tags:
+        - Domains
+      parameters:
+        - name: domainName
+          in: path
+          required: true
+          description: The name of the domain to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Domain deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteDomainResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+
+  /domains/{domainName}/index-fields:
+    post:
+      operationId: DefineIndexField
+      summary: Define an index field
+      description: >-
+        Configures an IndexField for the search domain. Used to create new
+        fields and modify existing ones.
+      tags:
+        - Index Fields
+      parameters:
+        - name: domainName
+          in: path
+          required: true
+          description: The name of the domain.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DefineIndexFieldRequest'
+      responses:
+        '200':
+          description: Index field defined
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DefineIndexFieldResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '404':
+          description: Domain not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+    get:
+      operationId: DescribeIndexFields
+      summary: Describe index fields
+      description: >-
+        Gets information about the index fields configured for the search domain.
+      tags:
+        - Index Fields
+      parameters:
+        - name: domainName
+          in: path
+          required: true
+          description: The name of the domain.
+          schema:
+            type: string
+        - name: fieldNames
+          in: query
+          description: A list of field names to describe.
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeIndexFieldsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+
+  /domains/{domainName}/indexDocuments:
+    post:
+      operationId: IndexDocuments
+      summary: Index documents
+      description: >-
+        Tells the search domain to start indexing its documents using the
+        latest indexing options. This operation must be invoked to activate
+        options whose OptionStatus is RequiresIndexDocuments.
+      tags:
+        - Domains
+      parameters:
+        - name: domainName
+          in: path
+          required: true
+          description: The name of the domain.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Indexing started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexDocumentsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+
+components:
+  schemas:
+    CreateDomainRequest:
+      type: object
+      required:
+        - DomainName
+      properties:
+        DomainName:
+          type: string
+          description: A name for the domain you are creating.
+          minLength: 3
+          maxLength: 28
+
+    CreateDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
+
+    DescribeDomainsResponse:
+      type: object
+      properties:
+        DomainStatusList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DomainStatus'
+
+    DeleteDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
+
+    DomainStatus:
+      type: object
+      properties:
+        DomainId:
+          type: string
+        DomainName:
+          type: string
+        ARN:
+          type: string
+        Created:
+          type: boolean
+        Deleted:
+          type: boolean
+        Processing:
+          type: boolean
+        RequiresIndexDocuments:
+          type: boolean
+        SearchInstanceCount:
+          type: integer
+        SearchInstanceType:
+          type: string
+        DocService:
+          type: object
+          properties:
+            Endpoint:
+              type: string
+        SearchService:
+          type: object
+          properties:
+            Endpoint:
+              type: string
+
+    DefineIndexFieldRequest:
+      type: object
+      required:
+        - IndexField
+      properties:
+        IndexField:
+          type: object
+          required:
+            - IndexFieldName
+            - IndexFieldType
+          properties:
+            IndexFieldName:
+              type: string
+            IndexFieldType:
+              type: string
+              enum:
+                - int
+                - double
+                - literal
+                - text
+                - date
+                - latlon
+                - int-array
+                - double-array
+                - literal-array
+                - text-array
+                - date-array
+
+    DefineIndexFieldResponse:
+      type: object
+      properties:
+        IndexField:
+          type: object
+          properties:
+            Options:
+              type: object
+            Status:
+              type: object
+
+    DescribeIndexFieldsResponse:
+      type: object
+      properties:
+        IndexFields:
+          type: array
+          items:
+            type: object
+            properties:
+              Options:
+                type: object
+              Status:
+                type: object
+
+    IndexDocumentsResponse:
+      type: object
+      properties:
+        FieldNames:
+          type: array
+          items:
+            type: string
+
+    ValidationException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    ResourceAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    ResourceNotFoundException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
