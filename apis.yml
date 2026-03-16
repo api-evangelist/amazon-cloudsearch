@@ -1,4 +1,4 @@
-name: Amazon CloudSearch API
+name: Amazon CloudSearch
 description: Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application, supporting full-text search, faceting, highlighting, autocomplete, and geospatial search.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/cloudsearch/
