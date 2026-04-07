@@ -27,8 +27,6 @@ tags:
     description: Operations for creating and managing search domains
   - name: Index Fields
     description: Operations for defining and managing index fields
-  - name: Scaling
-    description: Operations for configuring scaling options
 paths:
   /domains:
     post:
