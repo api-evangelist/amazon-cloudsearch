@@ -33,7 +33,7 @@ paths:
   /domains:
     post:
       operationId: CreateDomain
-      summary: Create a search domain
+      summary: Amazon CloudSearch Create a search domain
       description: >-
         Creates a new search domain. For more information, see Creating a Search
         Domain in the Amazon CloudSearch Developer Guide.
@@ -72,7 +72,7 @@ paths:
                 $ref: '#/components/schemas/InternalException'
     get:
       operationId: DescribeDomains
-      summary: Describe search domains
+      summary: Amazon CloudSearch Describe search domains
       description: >-
         Gets information about the search domains owned by this account.
         Can be limited to specific domains.
@@ -109,7 +109,7 @@ paths:
   /domains/{domainName}:
     delete:
       operationId: DeleteDomain
-      summary: Delete a search domain
+      summary: Amazon CloudSearch Delete a search domain
       description: >-
         Permanently deletes a search domain and all of its data. Once a domain
         has been deleted, it cannot be recovered.
@@ -145,7 +145,7 @@ paths:
   /domains/{domainName}/index-fields:
     post:
       operationId: DefineIndexField
-      summary: Define an index field
+      summary: Amazon CloudSearch Define an index field
       description: >-
         Configures an IndexField for the search domain. Used to create new
         fields and modify existing ones.
@@ -191,7 +191,7 @@ paths:
                 $ref: '#/components/schemas/InternalException'
     get:
       operationId: DescribeIndexFields
-      summary: Describe index fields
+      summary: Amazon CloudSearch Describe index fields
       description: >-
         Gets information about the index fields configured for the search domain.
       tags:
@@ -233,7 +233,7 @@ paths:
   /domains/{domainName}/indexDocuments:
     post:
       operationId: IndexDocuments
-      summary: Index documents
+      summary: Amazon CloudSearch Index documents
       description: >-
         Tells the search domain to start indexing its documents using the
         latest indexing options. This operation must be invoked to activate
