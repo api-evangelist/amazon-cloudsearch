@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-schema/cloudsearch-define-index-field-response-schema.json",
+  "title": "DefineIndexFieldResponse",
+  "description": "DefineIndexFieldResponse schema",
+  "type": "object",
+  "properties": {
+    "IndexField": {
+      "type": "object",
+      "properties": {
+        "Options": {
+          "type": "object"
+        },
+        "Status": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

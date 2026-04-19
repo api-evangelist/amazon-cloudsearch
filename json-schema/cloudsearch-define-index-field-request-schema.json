@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-schema/cloudsearch-define-index-field-request-schema.json",
+  "title": "DefineIndexFieldRequest",
+  "description": "DefineIndexFieldRequest schema",
+  "type": "object",
+  "properties": {
+    "IndexField": {
+      "type": "object",
+      "required": [
+        "IndexFieldName",
+        "IndexFieldType"
+      ],
+      "properties": {
+        "IndexFieldName": {
+          "type": "string"
+        },
+        "IndexFieldType": {
+          "type": "string",
+          "enum": [
+            "int",
+            "double",
+            "literal",
+            "text",
+            "date",
+            "latlon",
+            "int-array",
+            "double-array",
+            "literal-array",
+            "text-array",
+            "date-array"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "IndexField"
+  ]
+}

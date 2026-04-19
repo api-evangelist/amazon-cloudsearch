@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-schema/cloudsearch-index-documents-response-schema.json",
+  "title": "IndexDocumentsResponse",
+  "description": "IndexDocumentsResponse schema",
+  "type": "object",
+  "properties": {
+    "FieldNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

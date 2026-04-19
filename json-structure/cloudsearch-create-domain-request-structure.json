@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-structure/cloudsearch-create-domain-request-structure.json",
+  "name": "CreateDomainRequest",
+  "description": "CreateDomainRequest schema",
+  "type": "object",
+  "properties": {
+    "DomainName": {
+      "type": "string",
+      "description": "A name for the domain you are creating.",
+      "minLength": 3,
+      "maxLength": 28
+    }
+  },
+  "required": [
+    "DomainName"
+  ]
+}

@@ -1,0 +1,65 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Amazon CloudSearch"
+  description: "Vocabulary for Amazon CloudSearch APIs covering operations, schemas, and capability workflows."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: "Amazon CloudSearch API"
+      namespace: cloudsearch
+      baseUrl: https://cloudsearch.us-east-1.amazonaws.com
+      status: active
+
+  resources: []
+  actions:
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: get
+      httpMethod: GET
+      pattern: read
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        apis: [cloudsearch]
+
+capability:
+  workflows:
+    - name: "Search Domain Management"
+      file: capabilities/search-management.yaml
+      toolCount: 6
+      personas: [Application Developer]
+
+  personas:
+    - id: application-developer
+      name: "Application Developer"
+      workflows: ["Search Domain Management"]
+
+  namespaces:
+    - name: cloudsearch
+      type: consumed
+      baseUri: https://cloudsearch.us-east-1.amazonaws.com
+    - name: cloudsearch-workflow-api
+      type: rest-exposed
+      port: 8080
+    - name: cloudsearch-workflow-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: AWS_ACCESS_KEY_ID
+      workflows: ["Search Domain Management"]
+    - name: AWS_SECRET_ACCESS_KEY
+      workflows: ["Search Domain Management"]
+
+crossReference: []

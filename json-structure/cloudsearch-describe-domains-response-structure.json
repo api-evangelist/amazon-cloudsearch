@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-structure/cloudsearch-describe-domains-response-structure.json",
+  "name": "DescribeDomainsResponse",
+  "description": "DescribeDomainsResponse schema",
+  "type": "object",
+  "properties": {
+    "DomainStatusList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DomainStatus"
+      }
+    }
+  }
+}

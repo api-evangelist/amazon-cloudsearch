@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-structure/cloudsearch-domain-status-structure.json",
+  "name": "DomainStatus",
+  "description": "DomainStatus schema",
+  "type": "object",
+  "properties": {
+    "DomainId": {
+      "type": "string"
+    },
+    "DomainName": {
+      "type": "string"
+    },
+    "ARN": {
+      "type": "string"
+    },
+    "Created": {
+      "type": "boolean"
+    },
+    "Deleted": {
+      "type": "boolean"
+    },
+    "Processing": {
+      "type": "boolean"
+    },
+    "RequiresIndexDocuments": {
+      "type": "boolean"
+    },
+    "SearchInstanceCount": {
+      "type": "int32"
+    },
+    "SearchInstanceType": {
+      "type": "string"
+    },
+    "DocService": {
+      "type": "object",
+      "properties": {
+        "Endpoint": {
+          "type": "string"
+        }
+      }
+    },
+    "SearchService": {
+      "type": "object",
+      "properties": {
+        "Endpoint": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

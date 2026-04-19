@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-structure/cloudsearch-delete-domain-response-structure.json",
+  "name": "DeleteDomainResponse",
+  "description": "DeleteDomainResponse schema",
+  "type": "object",
+  "properties": {
+    "DomainStatus": {
+      "$ref": "#/components/schemas/DomainStatus"
+    }
+  }
+}

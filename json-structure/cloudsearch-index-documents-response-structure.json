@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/json-structure/cloudsearch-index-documents-response-structure.json",
+  "name": "IndexDocumentsResponse",
+  "description": "IndexDocumentsResponse schema",
+  "type": "object",
+  "properties": {
+    "FieldNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

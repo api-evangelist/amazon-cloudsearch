@@ -1,0 +1,6 @@
+{
+  "IndexField": {
+    "IndexFieldName": "example-resource",
+    "IndexFieldType": "int"
+  }
+}

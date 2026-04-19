@@ -1,0 +1,17 @@
+{
+  "DomainId": "abc12345",
+  "DomainName": "example-resource",
+  "ARN": "arn:aws:::example/abc12345",
+  "Created": true,
+  "Deleted": true,
+  "Processing": true,
+  "RequiresIndexDocuments": true,
+  "SearchInstanceCount": 100,
+  "SearchInstanceType": "example-value",
+  "DocService": {
+    "Endpoint": "example-value"
+  },
+  "SearchService": {
+    "Endpoint": "example-value"
+  }
+}
