@@ -1,0 +1,47 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/amazon-cloudsearch-openapi.yml
+notes: >-
+  Derived from the OpenAPI definition and AWS public documentation. Amazon
+  CloudSearch is an AWS-native service authenticated with AWS Signature Version 4
+  (not OAuth2/OIDC). Its wire protocol is the AWS query/JSON action model, not a
+  hypermedia or JSON:API style, and errors are AWS exception shapes rather than
+  RFC 9457 problem+json.
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth2 security scheme; requests are signed with AWS SigV4.
+  - id: oidc
+    conforms: false
+  - id: aws-sigv4
+    conforms: true
+    evidence: All requests require AWS Signature Version 4 signing.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors use AWS exception schemas (message field), not application/problem+json.
+  - id: json-api
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: fhir-r4
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim2
+    conforms: false
+  - id: psd2
+    conforms: false
+  - id: pagination
+    conforms: false
+    evidence: >-
+      Domain and index-field management operations return full lists without
+      cursor or page parameters.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key header; CreateDomain is not idempotent (409 on conflict).
+  - id: https-tls
+    conforms: true
+    evidence: Regional endpoints are HTTPS; domains can be configured to require HTTPS.
+  - id: multi-region
+    conforms: true
+    evidence: Regional endpoints (cloudsearch.{region}.amazonaws.com) across AWS regions.

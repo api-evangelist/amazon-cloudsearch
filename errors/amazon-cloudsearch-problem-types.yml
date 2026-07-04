@@ -1,0 +1,45 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/amazon-cloudsearch-openapi.yml
+format: aws-exception
+notes: >-
+  Derived from the 4xx/5xx responses in the OpenAPI definition. Amazon CloudSearch
+  does not emit RFC 9457 application/problem+json; it returns AWS exception
+  documents with a message field and an exception type. Titles and remediation are
+  enriched from the AWS CloudSearch error-handling documentation.
+docs: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/error-handling.html
+problems:
+  - status: 400
+    type: ValidationException
+    title: Invalid request parameters
+    remediation: Check required fields and parameter formats (e.g. DomainName 3-28 chars).
+    source_operations:
+      - openapi/amazon-cloudsearch-openapi.yml#CreateDomain
+      - openapi/amazon-cloudsearch-openapi.yml#DescribeDomains
+      - openapi/amazon-cloudsearch-openapi.yml#DeleteDomain
+      - openapi/amazon-cloudsearch-openapi.yml#DefineIndexField
+      - openapi/amazon-cloudsearch-openapi.yml#DescribeIndexFields
+      - openapi/amazon-cloudsearch-openapi.yml#IndexDocuments
+  - status: 409
+    type: ResourceAlreadyExistsException
+    title: Domain already exists
+    remediation: Use a unique domain name or describe/reuse the existing domain.
+    source_operations:
+      - openapi/amazon-cloudsearch-openapi.yml#CreateDomain
+  - status: 404
+    type: ResourceNotFoundException
+    title: Domain not found
+    remediation: Verify the domain name exists in the current account and region.
+    source_operations:
+      - openapi/amazon-cloudsearch-openapi.yml#DefineIndexField
+  - status: 500
+    type: InternalException
+    title: Internal server error
+    remediation: Retry with exponential backoff; if persistent, contact AWS Support.
+    source_operations:
+      - openapi/amazon-cloudsearch-openapi.yml#CreateDomain
+      - openapi/amazon-cloudsearch-openapi.yml#DescribeDomains
+      - openapi/amazon-cloudsearch-openapi.yml#DeleteDomain
+      - openapi/amazon-cloudsearch-openapi.yml#DefineIndexField
+      - openapi/amazon-cloudsearch-openapi.yml#DescribeIndexFields
+      - openapi/amazon-cloudsearch-openapi.yml#IndexDocuments

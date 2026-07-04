@@ -1,0 +1,26 @@
+generated: '2026-06-20'
+method: searched
+source: probed live 2026-06-20
+notes: >-
+  The regional CloudSearch API endpoint (cloudsearch.us-east-1.amazonaws.com)
+  returns 404 for all standard discovery documents; it is a SigV4 query/JSON API
+  with no OpenID/OAuth metadata surface. A valid RFC 9116 security.txt is
+  published at the corporate host aws.amazon.com and is captured here.
+hosts:
+  - host: https://cloudsearch.us-east-1.amazonaws.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://aws.amazon.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: amazon-cloudsearch-security.txt

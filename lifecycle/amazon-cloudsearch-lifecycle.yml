@@ -1,0 +1,26 @@
+generated: '2026-06-20'
+method: searched
+source: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/
+notes: >-
+  Amazon CloudSearch versions its configuration API by dated API version. The
+  current generation is the 2013-01-01 API; the earlier 2011-02-01 API was
+  deprecated and customers were migrated. AWS does not expose RFC 8594
+  Sunset/Deprecation response headers on this API.
+versioning:
+  scheme: dated-api-version
+  current: '2013-01-01'
+  previous: '2011-02-01'
+  migration_guide: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/migrating.html
+deprecation:
+  policy_url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/document-history.html
+  sunset_header: false
+  deprecation_header: false
+  note: The 2011-02-01 API generation is deprecated in favor of 2013-01-01.
+sla:
+  url: https://aws.amazon.com/legal/service-level-agreements/
+  note: Covered by the general AWS service terms; no CloudSearch-specific SLA published.
+status_page: https://health.aws.amazon.com/health/status
+support: https://aws.amazon.com/premiumsupport/
+limits: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/limits.html
+document_history: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/document-history.html
+deprecated_operations: []

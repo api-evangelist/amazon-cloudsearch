@@ -1,0 +1,92 @@
+generated: '2026-06-20'
+method: searched
+source: https://aws.amazon.com/tools/
+description: >-
+  First-party AWS SDK client libraries for Amazon CloudSearch. AWS splits
+  CloudSearch into two clients: the configuration API (create/manage domains and
+  index fields) and the CloudSearch Domain API (upload documents and run search
+  queries). Package names below were verified live against each registry.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@aws-sdk/client-cloudsearch"
+    version: 3.1079.0
+    url: https://www.npmjs.com/package/@aws-sdk/client-cloudsearch
+    install: npm install @aws-sdk/client-cloudsearch
+    official: true
+    scope: configuration
+  - language: javascript
+    registry: npm
+    name: "@aws-sdk/client-cloudsearch-domain"
+    version: 3.1079.0
+    url: https://www.npmjs.com/package/@aws-sdk/client-cloudsearch-domain
+    install: npm install @aws-sdk/client-cloudsearch-domain
+    official: true
+    scope: domain
+  - language: python
+    registry: pypi
+    name: boto3
+    url: https://pypi.org/project/boto3/
+    install: pip install boto3
+    official: true
+    note: >-
+      CloudSearch is exposed via boto3 clients boto3.client('cloudsearch') and
+      boto3.client('cloudsearchdomain').
+  - language: ruby
+    registry: rubygems
+    name: aws-sdk-cloudsearch
+    version: 1.90.0
+    url: https://rubygems.org/gems/aws-sdk-cloudsearch
+    install: gem install aws-sdk-cloudsearch
+    official: true
+    scope: configuration
+  - language: ruby
+    registry: rubygems
+    name: aws-sdk-cloudsearchdomain
+    url: https://rubygems.org/gems/aws-sdk-cloudsearchdomain
+    install: gem install aws-sdk-cloudsearchdomain
+    official: true
+    scope: domain
+  - language: dotnet
+    registry: nuget
+    name: AWSSDK.CloudSearch
+    url: https://www.nuget.org/packages/AWSSDK.CloudSearch/
+    install: dotnet add package AWSSDK.CloudSearch
+    official: true
+    scope: configuration
+  - language: dotnet
+    registry: nuget
+    name: AWSSDK.CloudSearchDomain
+    url: https://www.nuget.org/packages/AWSSDK.CloudSearchDomain/
+    install: dotnet add package AWSSDK.CloudSearchDomain
+    official: true
+    scope: domain
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/aws/aws-sdk-go-v2/service/cloudsearch
+    url: https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudsearch
+    install: go get github.com/aws/aws-sdk-go-v2/service/cloudsearch
+    official: true
+    scope: configuration
+  - language: php
+    registry: packagist
+    name: aws/aws-sdk-php
+    url: https://packagist.org/packages/aws/aws-sdk-php
+    install: composer require aws/aws-sdk-php
+    official: true
+    note: Monolithic SDK; CloudSearch and CloudSearchDomain clients are included.
+  - language: rust
+    registry: crates.io
+    name: aws-sdk-cloudsearch
+    url: https://crates.io/crates/aws-sdk-cloudsearch
+    install: cargo add aws-sdk-cloudsearch
+    official: true
+    scope: configuration
+  - language: java
+    registry: maven
+    name: com.amazonaws:aws-java-sdk-cloudsearch
+    version: 1.12.797
+    url: https://central.sonatype.com/artifact/com.amazonaws/aws-java-sdk-cloudsearch
+    install: "implementation 'com.amazonaws:aws-java-sdk-cloudsearch'"
+    official: true
+    scope: configuration

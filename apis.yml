@@ -4,7 +4,7 @@ description: Amazon CloudSearch is a managed search service that makes it easy t
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/cloudsearch/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-06-20'
 apis:
 - name: Amazon CloudSearch API
   description: API for creating and managing CloudSearch domains, uploading documents, configuring search fields and suggesters, and executing search queries.
@@ -43,6 +43,12 @@ apis:
     url: json-schema/cloudsearch-domain-status-schema.json
   - type: JSONLD
     url: json-ld/amazon-cloudsearch-context.jsonld
+  - type: Overlay
+    url: overlays/amazon-cloudsearch-openapi-overlay.yaml
+  - type: ErrorCatalog
+    url: errors/amazon-cloudsearch-problem-types.yml
+  - type: MCPServer
+    url: mcp/amazon-cloudsearch-mcp.yml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -74,6 +80,18 @@ common:
   url: https://aws.amazon.com/contact-us/
 - type: Compliance
   url: https://aws.amazon.com/compliance/
+- type: Packages
+  url: packages/amazon-cloudsearch-packages.yml
+- type: WellKnown
+  url: well-known/amazon-cloudsearch-well-known.yml
+- type: SecurityTxt
+  url: well-known/amazon-cloudsearch-security.txt
+- type: LLMsTxt
+  url: llms/amazon-cloudsearch-llms.txt
+- type: Conformance
+  url: conformance/amazon-cloudsearch-conformance.yml
+- type: Lifecycle
+  url: lifecycle/amazon-cloudsearch-lifecycle.yml
 - type: SpectralRules
   url: rules/amazon-cloudsearch-spectral-rules.yml
 - type: Vocabulary

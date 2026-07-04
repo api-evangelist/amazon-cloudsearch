@@ -1,0 +1,31 @@
+generated: '2026-06-20'
+method: derived
+status: candidate
+source: openapi/amazon-cloudsearch-openapi.yml
+notes: >-
+  No official hosted or remote MCP server was found for Amazon CloudSearch (the
+  AWS MCP server catalog does not publish a CloudSearch-specific server as of this
+  round). The tool list below is a candidate derived one-to-one from the OpenAPI
+  operations and is not a published server.
+server:
+  name: amazon-cloudsearch
+  transport: stdio
+tools:
+  - name: create_domain
+    description: Create a new CloudSearch search domain.
+    source_operation: openapi/amazon-cloudsearch-openapi.yml#CreateDomain
+  - name: describe_domains
+    description: Get information about the search domains owned by this account.
+    source_operation: openapi/amazon-cloudsearch-openapi.yml#DescribeDomains
+  - name: delete_domain
+    description: Permanently delete a search domain and all of its data.
+    source_operation: openapi/amazon-cloudsearch-openapi.yml#DeleteDomain
+  - name: define_index_field
+    description: Configure an index field for a search domain.
+    source_operation: openapi/amazon-cloudsearch-openapi.yml#DefineIndexField
+  - name: describe_index_fields
+    description: Get information about the index fields configured for a search domain.
+    source_operation: openapi/amazon-cloudsearch-openapi.yml#DescribeIndexFields
+  - name: index_documents
+    description: Tell the search domain to start indexing its documents using the latest options.
+    source_operation: openapi/amazon-cloudsearch-openapi.yml#IndexDocuments

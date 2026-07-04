@@ -1,0 +1,43 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amazon CloudSearch API
+  version: 1.0.0
+extends: openapi/amazon-cloudsearch-openapi.yml
+x-provenance:
+  generated: '2026-06-20'
+  method: generated
+  source: openapi/amazon-cloudsearch-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-slug: amazon-cloudsearch
+      x-apievangelist-provider: Amazon Web Services
+      x-api-id: amazon-cloudsearch
+      x-authentication: AWS Signature Version 4
+  - target: $.info
+    update:
+      x-artifacts:
+        packages: packages/amazon-cloudsearch-packages.yml
+        llms: llms/amazon-cloudsearch-llms.txt
+        conformance: conformance/amazon-cloudsearch-conformance.yml
+        errors: errors/amazon-cloudsearch-problem-types.yml
+        lifecycle: lifecycle/amazon-cloudsearch-lifecycle.yml
+  - target: $.paths['/domains'].post
+    update:
+      x-idempotent: false
+      x-apievangelist-note: >-
+        Creating a domain with an existing name returns 409
+        ResourceAlreadyExistsException.
+  - target: $.paths['/domains'].get
+    update:
+      x-apievangelist-note: Read-only; safe to poll while a domain is Processing.
+  - target: $.paths['/domains/{domainName}'].delete
+    update:
+      x-destructive: true
+      x-apievangelist-note: >-
+        Permanent and irreversible; deletes the domain and all indexed data.
+  - target: $.paths['/domains/{domainName}/indexDocuments'].post
+    update:
+      x-apievangelist-note: >-
+        Required to activate index options whose OptionStatus is
+        RequiresIndexDocuments.
