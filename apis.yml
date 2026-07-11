@@ -50,6 +50,12 @@ apis:
   - type: MCPServer
     url: mcp/amazon-cloudsearch-mcp.yml
 common:
+- type: TrustCenter
+  url: security/amazon-cloudsearch-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-cloudsearch-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-cloudsearch-domain-security.yml
 - type: Portal
   url: https://aws.amazon.com/
 - type: Website
