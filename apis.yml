@@ -50,6 +50,8 @@ apis:
   - type: MCPServer
     url: mcp/amazon-cloudsearch-mcp.yml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-cloudsearch-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-cloudsearch-trust-center.yml
 - type: VulnerabilityDisclosure
