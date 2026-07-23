@@ -1,0 +1,173 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudSearch Domains Index Fields API
+  description: Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application. CloudSearch supports full-text search with language-specific text processing, Boolean search, autocomplete suggestions, faceting, highlighting, and geospatial search.
+  version: '2013-01-01'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/contact-us/
+  termsOfService: https://aws.amazon.com/service-terms/
+servers:
+- url: https://cloudsearch.{region}.amazonaws.com
+  description: Amazon CloudSearch Regional Endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS Region
+tags:
+- name: Index Fields
+  description: Operations for defining and managing index fields
+paths:
+  /domains/{domainName}/index-fields:
+    post:
+      operationId: DefineIndexField
+      summary: Amazon CloudSearch Define an index field
+      description: Configures an IndexField for the search domain. Used to create new fields and modify existing ones.
+      tags:
+      - Index Fields
+      parameters:
+      - name: domainName
+        in: path
+        required: true
+        description: The name of the domain.
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DefineIndexFieldRequest'
+      responses:
+        '200':
+          description: Index field defined
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DefineIndexFieldResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '404':
+          description: Domain not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+    get:
+      operationId: DescribeIndexFields
+      summary: Amazon CloudSearch Describe index fields
+      description: Gets information about the index fields configured for the search domain.
+      tags:
+      - Index Fields
+      parameters:
+      - name: domainName
+        in: path
+        required: true
+        description: The name of the domain.
+        schema:
+          type: string
+      - name: fieldNames
+        in: query
+        description: A list of field names to describe.
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeIndexFieldsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalException'
+components:
+  schemas:
+    ValidationException:
+      type: object
+      properties:
+        message:
+          type: string
+    DefineIndexFieldResponse:
+      type: object
+      properties:
+        IndexField:
+          type: object
+          properties:
+            Options:
+              type: object
+            Status:
+              type: object
+    ResourceNotFoundException:
+      type: object
+      properties:
+        message:
+          type: string
+    DefineIndexFieldRequest:
+      type: object
+      required:
+      - IndexField
+      properties:
+        IndexField:
+          type: object
+          required:
+          - IndexFieldName
+          - IndexFieldType
+          properties:
+            IndexFieldName:
+              type: string
+            IndexFieldType:
+              type: string
+              enum:
+              - int
+              - double
+              - literal
+              - text
+              - date
+              - latlon
+              - int-array
+              - double-array
+              - literal-array
+              - text-array
+              - date-array
+    DescribeIndexFieldsResponse:
+      type: object
+      properties:
+        IndexFields:
+          type: array
+          items:
+            type: object
+            properties:
+              Options:
+                type: object
+              Status:
+                type: object
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
+externalDocs:
+  description: Amazon CloudSearch API Reference
+  url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
