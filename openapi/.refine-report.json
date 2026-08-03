@@ -1,0 +1,16 @@
+{
+  "provider": "amazon-cloudsearch",
+  "sources": [
+    "amazon-cloudsearch-domains-api-openapi.yml",
+    "amazon-cloudsearch-index-fields-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-cloudsearch-domains-api-openapi.yml",
+    "amazon-cloudsearch-index-fields-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
