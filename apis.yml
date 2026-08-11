@@ -90,6 +90,10 @@ apis:
   - type: ErrorCatalog
     url: errors/amazon-cloudsearch-problem-types.yml
 common:
+- type: MCPServer
+  url: mcp/amazon-cloudsearch-mcp.yml
+- type: Overlay
+  url: overlays/amazon-cloudsearch-openapi-overlay.yaml
 - type: AgenticAccess
   url: agentic-access/amazon-cloudsearch-agentic-access.yml
 - type: TrustCenter
