@@ -3,6 +3,7 @@ description: >-
   Amazon CloudSearch is a managed search service that makes it easy to set up, manage, and scale a search solution for
   your website or application. Supports full-text search, Boolean search, faceted search, autocomplete, geospatial
   search, and 34 languages.
+specificationVersion: '0.23'
 accessModel:
   pricing: unknown
   onboarding: unknown
