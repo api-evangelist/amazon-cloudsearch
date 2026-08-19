@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudSearch Domains Index Fields API",
+    "version": "2013-01-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Index Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon CloudSearch Describe index fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudsearch.{region}.amazonaws.com/domains/:domainName/index-fields",
+            "params": [
+              {
+                "name": "domainName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the domain."
+              },
+              {
+                "name": "fieldNames",
+                "value": "",
+                "type": "query",
+                "description": "A list of field names to describe."
+              }
+            ]
+          },
+          "docs": "Gets information about the index fields configured for the search domain."
+        },
+        {
+          "info": {
+            "name": "Amazon CloudSearch Define an index field",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudsearch.{region}.amazonaws.com/domains/:domainName/index-fields",
+            "params": [
+              {
+                "name": "domainName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the domain."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Configures an IndexField for the search domain. Used to create new fields and modify existing ones."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

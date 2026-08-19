@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudSearch Domains API",
+    "version": "2013-01-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Domains",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon CloudSearch Describe search domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudsearch.{region}.amazonaws.com/domains",
+            "params": [
+              {
+                "name": "domainNames",
+                "value": "",
+                "type": "query",
+                "description": "A list of domain names to describe."
+              }
+            ]
+          },
+          "docs": "Gets information about the search domains owned by this account. Can be limited to specific domains."
+        },
+        {
+          "info": {
+            "name": "Amazon CloudSearch Create a search domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudsearch.{region}.amazonaws.com/domains",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new search domain. For more information, see Creating a Search Domain in the Amazon CloudSearch Developer Guide."
+        },
+        {
+          "info": {
+            "name": "Amazon CloudSearch Delete a search domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cloudsearch.{region}.amazonaws.com/domains/:domainName",
+            "params": [
+              {
+                "name": "domainName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the domain to delete."
+              }
+            ]
+          },
+          "docs": "Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered."
+        },
+        {
+          "info": {
+            "name": "Amazon CloudSearch Index documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudsearch.{region}.amazonaws.com/domains/:domainName/indexDocuments",
+            "params": [
+              {
+                "name": "domainName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the domain."
+              }
+            ]
+          },
+          "docs": "Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose OptionStatus is RequiresIndexDocuments."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
