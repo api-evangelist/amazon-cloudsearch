@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon CloudSearch Domains API
   description: Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application. CloudSearch supports full-text search with language-specific text processing, Boolean search, autocomplete suggestions, faceting, highlighting, and geospatial search.
@@ -157,6 +157,26 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
+    ValidationException:
+      type: object
+      properties:
+        message:
+          type: string
+    DeleteDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
+    CreateDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
     CreateDomainRequest:
       type: object
       required:
@@ -167,18 +187,6 @@ components:
           description: A name for the domain you are creating.
           minLength: 3
           maxLength: 28
-    ValidationException:
-      type: object
-      properties:
-        message:
-          type: string
-    IndexDocumentsResponse:
-      type: object
-      properties:
-        FieldNames:
-          type: array
-          items:
-            type: string
     DescribeDomainsResponse:
       type: object
       properties:
@@ -186,6 +194,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DomainStatus'
+    IndexDocumentsResponse:
+      type: object
+      properties:
+        FieldNames:
+          type: array
+          items:
+            type: string
     ResourceAlreadyExistsException:
       type: object
       properties:
@@ -222,21 +237,6 @@ components:
           properties:
             Endpoint:
               type: string
-    CreateDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
-    DeleteDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html

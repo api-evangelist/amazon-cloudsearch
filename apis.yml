@@ -207,3 +207,5 @@ tags:
   - Search
   - Full-Text Search
   - Managed
+x-parent: aws
+x-relationship: product

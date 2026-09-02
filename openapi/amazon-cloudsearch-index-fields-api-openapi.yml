@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon CloudSearch Domains Index Fields API
   description: Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application. CloudSearch supports full-text search with language-specific text processing, Boolean search, autocomplete suggestions, faceting, highlighting, and geospatial search.
@@ -109,17 +109,12 @@ components:
       properties:
         message:
           type: string
-    DefineIndexFieldResponse:
+    ResourceNotFoundException:
       type: object
       properties:
-        IndexField:
-          type: object
-          properties:
-            Options:
-              type: object
-            Status:
-              type: object
-    ResourceNotFoundException:
+        message:
+          type: string
+    InternalException:
       type: object
       properties:
         message:
@@ -163,11 +158,16 @@ components:
                 type: object
               Status:
                 type: object
-    InternalException:
+    DefineIndexFieldResponse:
       type: object
       properties:
-        message:
-          type: string
+        IndexField:
+          type: object
+          properties:
+            Options:
+              type: object
+            Status:
+              type: object
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
