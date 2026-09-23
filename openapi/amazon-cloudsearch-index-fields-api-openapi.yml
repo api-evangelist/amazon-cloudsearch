@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon CloudSearch Domains Index Fields API
+  title: Amazon CloudSearch Index Fields API
   description: Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application. CloudSearch supports full-text search with language-specific text processing, Boolean search, autocomplete suggestions, faceting, highlighting, and geospatial search.
   version: '2013-01-01'
   contact:
@@ -104,21 +104,6 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
-    ValidationException:
-      type: object
-      properties:
-        message:
-          type: string
-    ResourceNotFoundException:
-      type: object
-      properties:
-        message:
-          type: string
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
     DefineIndexFieldRequest:
       type: object
       required:
@@ -146,6 +131,31 @@ components:
               - literal-array
               - text-array
               - date-array
+    ResourceNotFoundException:
+      type: object
+      properties:
+        message:
+          type: string
+    DefineIndexFieldResponse:
+      type: object
+      properties:
+        IndexField:
+          type: object
+          properties:
+            Options:
+              type: object
+            Status:
+              type: object
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
+    ValidationException:
+      type: object
+      properties:
+        message:
+          type: string
     DescribeIndexFieldsResponse:
       type: object
       properties:
@@ -158,16 +168,6 @@ components:
                 type: object
               Status:
                 type: object
-    DefineIndexFieldResponse:
-      type: object
-      properties:
-        IndexField:
-          type: object
-          properties:
-            Options:
-              type: object
-            Status:
-              type: object
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html

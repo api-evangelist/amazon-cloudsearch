@@ -157,26 +157,18 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
-    ValidationException:
+    DescribeDomainsResponse:
       type: object
       properties:
-        message:
-          type: string
-    DeleteDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
+        DomainStatusList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DomainStatus'
     CreateDomainResponse:
       type: object
       properties:
         DomainStatus:
           $ref: '#/components/schemas/DomainStatus'
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
     CreateDomainRequest:
       type: object
       required:
@@ -187,20 +179,6 @@ components:
           description: A name for the domain you are creating.
           minLength: 3
           maxLength: 28
-    DescribeDomainsResponse:
-      type: object
-      properties:
-        DomainStatusList:
-          type: array
-          items:
-            $ref: '#/components/schemas/DomainStatus'
-    IndexDocumentsResponse:
-      type: object
-      properties:
-        FieldNames:
-          type: array
-          items:
-            type: string
     ResourceAlreadyExistsException:
       type: object
       properties:
@@ -237,6 +215,28 @@ components:
           properties:
             Endpoint:
               type: string
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
+    ValidationException:
+      type: object
+      properties:
+        message:
+          type: string
+    DeleteDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
+    IndexDocumentsResponse:
+      type: object
+      properties:
+        FieldNames:
+          type: array
+          items:
+            type: string
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
