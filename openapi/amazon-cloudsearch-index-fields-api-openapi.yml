@@ -104,6 +104,21 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
+    DefineIndexFieldResponse:
+      type: object
+      properties:
+        IndexField:
+          type: object
+          properties:
+            Options:
+              type: object
+            Status:
+              type: object
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
     DefineIndexFieldRequest:
       type: object
       required:
@@ -131,26 +146,6 @@ components:
               - literal-array
               - text-array
               - date-array
-    ResourceNotFoundException:
-      type: object
-      properties:
-        message:
-          type: string
-    DefineIndexFieldResponse:
-      type: object
-      properties:
-        IndexField:
-          type: object
-          properties:
-            Options:
-              type: object
-            Status:
-              type: object
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
     ValidationException:
       type: object
       properties:
@@ -168,6 +163,11 @@ components:
                 type: object
               Status:
                 type: object
+    ResourceNotFoundException:
+      type: object
+      properties:
+        message:
+          type: string
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html

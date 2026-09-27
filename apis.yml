@@ -208,5 +208,5 @@ tags:
   - Search
   - Full-Text Search
   - Managed
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

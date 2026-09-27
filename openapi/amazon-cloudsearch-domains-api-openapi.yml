@@ -157,33 +157,6 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
-    DescribeDomainsResponse:
-      type: object
-      properties:
-        DomainStatusList:
-          type: array
-          items:
-            $ref: '#/components/schemas/DomainStatus'
-    CreateDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
-    CreateDomainRequest:
-      type: object
-      required:
-      - DomainName
-      properties:
-        DomainName:
-          type: string
-          description: A name for the domain you are creating.
-          minLength: 3
-          maxLength: 28
-    ResourceAlreadyExistsException:
-      type: object
-      properties:
-        message:
-          type: string
     DomainStatus:
       type: object
       properties:
@@ -215,21 +188,28 @@ components:
           properties:
             Endpoint:
               type: string
+    DescribeDomainsResponse:
+      type: object
+      properties:
+        DomainStatusList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DomainStatus'
     InternalException:
       type: object
       properties:
         message:
           type: string
+    CreateDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
     ValidationException:
       type: object
       properties:
         message:
           type: string
-    DeleteDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
     IndexDocumentsResponse:
       type: object
       properties:
@@ -237,6 +217,26 @@ components:
           type: array
           items:
             type: string
+    DeleteDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
+    CreateDomainRequest:
+      type: object
+      required:
+      - DomainName
+      properties:
+        DomainName:
+          type: string
+          description: A name for the domain you are creating.
+          minLength: 3
+          maxLength: 28
+    ResourceAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
