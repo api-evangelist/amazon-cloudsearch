@@ -104,6 +104,18 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
+    DescribeIndexFieldsResponse:
+      type: object
+      properties:
+        IndexFields:
+          type: array
+          items:
+            type: object
+            properties:
+              Options:
+                type: object
+              Status:
+                type: object
     DefineIndexFieldResponse:
       type: object
       properties:
@@ -114,11 +126,6 @@ components:
               type: object
             Status:
               type: object
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
     DefineIndexFieldRequest:
       type: object
       required:
@@ -151,18 +158,11 @@ components:
       properties:
         message:
           type: string
-    DescribeIndexFieldsResponse:
+    InternalException:
       type: object
       properties:
-        IndexFields:
-          type: array
-          items:
-            type: object
-            properties:
-              Options:
-                type: object
-              Status:
-                type: object
+        message:
+          type: string
     ResourceNotFoundException:
       type: object
       properties:

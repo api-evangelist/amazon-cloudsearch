@@ -157,6 +157,11 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
+    DeleteDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
     DomainStatus:
       type: object
       properties:
@@ -188,28 +193,6 @@ components:
           properties:
             Endpoint:
               type: string
-    DescribeDomainsResponse:
-      type: object
-      properties:
-        DomainStatusList:
-          type: array
-          items:
-            $ref: '#/components/schemas/DomainStatus'
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
-    CreateDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
-    ValidationException:
-      type: object
-      properties:
-        message:
-          type: string
     IndexDocumentsResponse:
       type: object
       properties:
@@ -217,11 +200,13 @@ components:
           type: array
           items:
             type: string
-    DeleteDomainResponse:
+    DescribeDomainsResponse:
       type: object
       properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
+        DomainStatusList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DomainStatus'
     CreateDomainRequest:
       type: object
       required:
@@ -237,6 +222,21 @@ components:
       properties:
         message:
           type: string
+    ValidationException:
+      type: object
+      properties:
+        message:
+          type: string
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
+    CreateDomainResponse:
+      type: object
+      properties:
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
