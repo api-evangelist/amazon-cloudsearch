@@ -157,11 +157,6 @@ paths:
                 $ref: '#/components/schemas/InternalException'
 components:
   schemas:
-    DeleteDomainResponse:
-      type: object
-      properties:
-        DomainStatus:
-          $ref: '#/components/schemas/DomainStatus'
     DomainStatus:
       type: object
       properties:
@@ -193,20 +188,11 @@ components:
           properties:
             Endpoint:
               type: string
-    IndexDocumentsResponse:
+    ValidationException:
       type: object
       properties:
-        FieldNames:
-          type: array
-          items:
-            type: string
-    DescribeDomainsResponse:
-      type: object
-      properties:
-        DomainStatusList:
-          type: array
-          items:
-            $ref: '#/components/schemas/DomainStatus'
+        message:
+          type: string
     CreateDomainRequest:
       type: object
       required:
@@ -217,26 +203,40 @@ components:
           description: A name for the domain you are creating.
           minLength: 3
           maxLength: 28
-    ResourceAlreadyExistsException:
+    IndexDocumentsResponse:
       type: object
       properties:
-        message:
-          type: string
-    ValidationException:
+        FieldNames:
+          type: array
+          items:
+            type: string
+    DeleteDomainResponse:
       type: object
       properties:
-        message:
-          type: string
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
+        DomainStatus:
+          $ref: '#/components/schemas/DomainStatus'
     CreateDomainResponse:
       type: object
       properties:
         DomainStatus:
           $ref: '#/components/schemas/DomainStatus'
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
+    DescribeDomainsResponse:
+      type: object
+      properties:
+        DomainStatusList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DomainStatus'
+    ResourceAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
 externalDocs:
   description: Amazon CloudSearch API Reference
   url: https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_Reference.html
