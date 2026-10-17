@@ -131,11 +131,6 @@ components:
                 type: object
               Status:
                 type: object
-    InternalException:
-      type: object
-      properties:
-        message:
-          type: string
     DefineIndexFieldRequest:
       type: object
       required:
@@ -163,6 +158,11 @@ components:
               - literal-array
               - text-array
               - date-array
+    InternalException:
+      type: object
+      properties:
+        message:
+          type: string
     ResourceNotFoundException:
       type: object
       properties:
