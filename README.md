@@ -1,4 +1,4 @@
-# Amazon CloudSearch (amazon-cloudsearch)
+# Amazon CloudSearch
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,113 +66,183 @@
 
 Amazon CloudSearch is a managed search service that makes it easy to set up, manage, and scale a search solution for your website or application. Supports full-text search, Boolean search, faceted search, autocomplete, geospatial search, and 34 languages.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/amazon-cloudsearch/refs/heads/main/apis.yml)
+**Areas:** AWS · CloudSearch · Search · Full-Text Search · Managed
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon CloudSearch on APIs.io
 
-## Tags:
+Everything profiled for Amazon CloudSearch is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-cloudsearch/](https://apis.io/providers/amazon-cloudsearch/)** — or go straight to one of the APIs or properties below.
 
- - AWS, CloudSearch, Search, Full-Text Search, Managed
+### APIs (3)
 
-## Timestamps
+- [Amazon CloudSearch Domains API](https://apis.io/apis/amazon-cloudsearch/amazon-cloudsearch-domains-api/) — Operations for creating and managing search domains
+- [Amazon CloudSearch Index Fields API](https://apis.io/apis/amazon-cloudsearch/amazon-cloudsearch-index-fields-api/) — Operations for defining and managing index fields
+- [Amazon CloudSearch Cloudsearch Operations API](https://apis.io/apis/amazon-cloudsearch/amazon-cloudsearch-operations-api/) — The Cloudsearch Operations API from Amazon CloudSearch — 21 operation(s) for cloudsearch operations.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon CloudSearch API
-API for creating and managing CloudSearch domains, uploading documents, configuring search fields and suggesters, and executing search queries.
+#### MCP servers (1)
 
-**Human URL:** [https://aws.amazon.com/cloudsearch/](https://aws.amazon.com/cloudsearch/)
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags:
+- [amazon-cloudsearch](https://apis.io/servers/amazon-cloudsearch/amazon-cloudsearch/)
 
- - AWS, CloudSearch, Search, Full-Text Search
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/what-is-cloudsearch.html)
-- [OpenAPI](openapi/amazon-cloudsearch-openapi.yml)
-- [APIReference](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/what-is-cloudsearch.html)
+- [Amazon Cloudsearch Agentic Access](https://apis.io/agentic-access/amazon-cloudsearch/amazon-cloudsearch-agentic-access/)
 
-## Common Properties
+#### JSON Schema (10)
 
-- [Portal](https://aws.amazon.com/)
+The data models the API reads and writes.
+
+- [Amazon CloudSearch Domain](https://apis.io/schemas/amazon-cloudsearch/amazon-cloudsearch-domain/)
+- [CreateDomainRequest](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-create-domain-request/)
+- [CreateDomainResponse](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-create-domain-response/)
+- [DefineIndexFieldRequest](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-define-index-field-request/)
+- [DefineIndexFieldResponse](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-define-index-field-response/)
+- [DeleteDomainResponse](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-delete-domain-response/)
+- [DescribeDomainsResponse](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-describe-domains-response/)
+- [DescribeIndexFieldsResponse](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-describe-index-fields-response/)
+- [DomainStatus](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-domain-status/)
+- [IndexDocumentsResponse](https://apis.io/schemas/amazon-cloudsearch/cloudsearch-index-documents-response/)
+
+#### JSON Structure (9)
+
+Data models expressed in JSON Structure.
+
+- [Cloudsearch Create Domain Request Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-create-domain-request-structure/)
+- [Cloudsearch Create Domain Response Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-create-domain-response-structure/)
+- [Cloudsearch Define Index Field Request Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-define-index-field-request-structure/)
+- [Cloudsearch Define Index Field Response Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-define-index-field-response-structure/)
+- [Cloudsearch Delete Domain Response Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-delete-domain-response-structure/)
+- [Cloudsearch Describe Domains Response Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-describe-domains-response-structure/)
+- [Cloudsearch Describe Index Fields Response Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-describe-index-fields-response-structure/)
+- [Cloudsearch Domain Status Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-domain-status-structure/)
+- [Cloudsearch Index Documents Response Structure](https://apis.io/json-structure/amazon-cloudsearch/cloudsearch-index-documents-response-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Cloudsearch Context](https://apis.io/jsonld/amazon-cloudsearch/amazon-cloudsearch-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Cloudsearch Vocabulary](https://apis.io/vocabularies/amazon-cloudsearch/amazon-cloudsearch-vocabulary/)
+
+#### Examples (9)
+
+Example requests and responses.
+
+- [Cloudsearch Create Domain Request Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-create-domain-request-example/)
+- [Cloudsearch Create Domain Response Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-create-domain-response-example/)
+- [Cloudsearch Define Index Field Request Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-define-index-field-request-example/)
+- [Cloudsearch Define Index Field Response Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-define-index-field-response-example/)
+- [Cloudsearch Delete Domain Response Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-delete-domain-response-example/)
+- [Cloudsearch Describe Domains Response Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-describe-domains-response-example/)
+- [Cloudsearch Describe Index Fields Response Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-describe-index-fields-response-example/)
+- [Cloudsearch Domain Status Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-domain-status-example/)
+- [Cloudsearch Index Documents Response Example](https://apis.io/examples/amazon-cloudsearch/cloudsearch-index-documents-response-example/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Amazon CloudSearch Domains API](https://apis.io/collections/amazon-cloudsearch/open-amazon-cloudsearch-domains-api/)
+- [Amazon CloudSearch Domains Index Fields API](https://apis.io/collections/amazon-cloudsearch/open-amazon-cloudsearch-index-fields-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Amazon Cloudsearch Openapi Overlay](https://apis.io/overlays/amazon-cloudsearch/amazon-cloudsearch-openapi-overlay/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon CloudSearch — jsonschema rules](https://apis.io/rules/amazon-cloudsearch/amazon-cloudsearch-jsonschema-spectral-rules/)
+- [Amazon CloudSearch API Rules](https://apis.io/rules/amazon-cloudsearch/amazon-cloudsearch-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Cloudsearch Domain Security](https://apis.io/security/amazon-cloudsearch/amazon-cloudsearch-domain-security/)
+- [Amazon Cloudsearch Trust Center](https://apis.io/security/amazon-cloudsearch/amazon-cloudsearch-trust-center/)
+- [Amazon Cloudsearch Vulnerability Disclosure](https://apis.io/security/amazon-cloudsearch/amazon-cloudsearch-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/cloudsearch/)
-- [SpectralRules](rules/amazon-cloudsearch-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-cloudsearch-vocabulary.yaml)
-- [NaftikoCapability](capabilities/search-management.yaml)
+- [Documentation](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/what-is-cloudsearch.html)
+- [Sign up](https://signin.aws.amazon.com/signup?request_type=register)
+- [Support](https://aws.amazon.com/premiumsupport/)
+- [Blog](https://aws.amazon.com/blogs/compute/)
+- [Compliance](https://aws.amazon.com/compliance/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Managed Search Infrastructure | Set up, manage, and scale search without becoming a search expert. |
-| Multi-Language Support | Full-text search across 34 languages with language-specific analyzers. |
-| Faceted Search | Narrow search results by category with faceted navigation. |
-| Autocomplete Suggestions | Real-time search suggestions as users type. |
-| Automatic Scaling | Automatically scale resources as data volume and query traffic change. |
-| High Availability | Distribute search traffic across multiple availability zones with Multi-AZ. |
+**Kin Score 59.7** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 62.6 |
+| Contract governance | 31.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 59.5 |
+| Access clarity | 60.5 |
 
-| Name | Description |
-|------|-------------|
-| Website Search | Add powerful full-text search capabilities to websites and web applications. |
-| E-Commerce Product Search | Enable customers to find products with faceted filtering and relevance ranking. |
-| Document Search | Search across large document repositories with Boolean and proximity search. |
-| Geospatial Search | Find resources by location with geospatial search queries. |
+**Agent readiness 22.2** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| Amazon S3 | Index documents stored in S3 buckets. |
-| Amazon DynamoDB | Search DynamoDB data by exporting to CloudSearch. |
-| AWS IAM | Control access to search domains with IAM policies. |
-| Amazon CloudFront | Cache search results at CloudFront edge for lower latency. |
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-cloudsearch/](https://apis.io/providers/amazon-cloudsearch/).
 
-### OpenAPI
+## How this profile is made
 
-- [Amazon CloudSearch API](openapi/amazon-cloudsearch-openapi.yml)
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-### JSON Schema
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon CloudSearch: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-- [CreateDomainRequest](json-schema/cloudsearch-create-domain-request-schema.json)
-- [CreateDomainResponse](json-schema/cloudsearch-create-domain-response-schema.json)
-- [DescribeDomainsResponse](json-schema/cloudsearch-describe-domains-response-schema.json)
-- [DeleteDomainResponse](json-schema/cloudsearch-delete-domain-response-schema.json)
-- [DomainStatus](json-schema/cloudsearch-domain-status-schema.json)
+## Open an issue
 
-### JSON-LD
-
-- [Amazon CloudSearch Context](json-ld/amazon-cloudsearch-context.jsonld)
-
-## Capabilities
-
-### Shared Per-API Definitions
-
-- [Amazon CloudSearch](capabilities/shared/cloudsearch.yaml) — 6 operations
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Search Domain Management](capabilities/search-management.yaml) | Amazon CloudSearch | 6 | Application Developer |
-
-## Vocabulary
-
-- [Amazon CloudSearch Vocabulary](vocabulary/amazon-cloudsearch-vocabulary.yaml) — Unified taxonomy covering operations, workflows, and personas
-
-## Rules
-
-- [Amazon CloudSearch Spectral Rules](rules/amazon-cloudsearch-spectral-rules.yml) — 19 rules enforcing Amazon CloudSearch API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-cloudsearch/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
